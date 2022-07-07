@@ -16,8 +16,6 @@ Route::get('/', function () {
 });
 
 
-Route::group(['prefix'=>'checkout/', 'as'=>'checkout.'], function(){
-    Route::get('/vnpay', ['uses' => 'VnPayController@getVnpay']);
-    Route::post('/checkout', ['as' => 'vnpay.post', 'uses' => 'VnPayController@checkout']);
-    Route::get('/return-vnpay', ['uses' => 'VnPayController@returnVnpay']);
-});
+Route::get('/vnpay', ['uses' => 'VnPayController@getVnpay']);
+Route::post('/checkout-vnpay', ['as' => 'vnpay.post', 'uses' => 'VnPayController@checkout']);
+Route::get('/return-vnpay', ['uses' => 'VnPayController@returnVnpay']);
